@@ -11,9 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddTransient<IStudentRepository, StudentRepository>(); // New instance every time
 builder.Services.AddScoped<IStudentRepository, StudentRepository>(); // Same instance per request
-//builder.Services.AddSingleton<IStudentRepository, StudentRepository>(); // Single instance for api
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 var app = builder.Build();

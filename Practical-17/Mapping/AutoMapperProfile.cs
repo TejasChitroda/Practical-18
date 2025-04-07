@@ -8,7 +8,7 @@ namespace Practical_17.Mapping
         public AutoMapperProfile()
         {
             CreateMap<Student, StudentViewModel>().ReverseMap();
-            // Add more mappings as needed
+           
         }
     }
    
